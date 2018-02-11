@@ -41,13 +41,13 @@ router.subscribe(async ({ path, ...args }) => {
   if (configExists) {
     console.log('Welcome Back!');
     config = await fs.readJson(CONFIG_PATH);
-    console.log('config', config);
+    // console.log('config', config);
     router.next({ path: 'main' });
   } else {
     console.log(
-      "Hello! It looks like it's your first run of `flash`! Welcome!"
+      "Hello! It looks like it's your first run of 'flash' ⚡️  Welcome!"
     );
-    config = { hello: 'world' };
+    config = { hello: 'world' }; // TODO: replace this with something useful
     await fs.outputJson(CONFIG_PATH, config);
     console.log('Lets start by creating your first collection!');
     router.next({ path: 'create' });
@@ -81,6 +81,7 @@ async function createCollection() {
   const collection = { name, cards: [] };
   // TODO: Check if it exists already
   await fs.outputJson(path.join(COLLECTIONS_DIR, filename), collection);
+  console.log(`Lets add a first card to '${name}' collection!`);
   return { path: 'addCard', collection, filename };
 }
 
@@ -109,7 +110,7 @@ async function addCard({ collection, filename, ask }) {
     }
   ]);
 
-  console.log(card);
+  // console.log(card);
 
   collection.cards.push(card);
 
