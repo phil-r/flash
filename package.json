@@ -1,0 +1,14 @@
+{
+  "name": "flash-cli",
+  "version": "0.0.0",
+  "description": "⚡️ flashcards in your terminal",
+  "bin": {
+    "flash": "bin/cli.js"
+  },
+  "author": "Phil Rukin <philipp@rukin.me>",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^5.0.0",
+    "inquirer": "^5.1.0"
+  }
+}
