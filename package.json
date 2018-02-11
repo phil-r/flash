@@ -1,6 +1,6 @@
 {
   "name": "flash-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "⚡️ flashcards in your terminal",
   "bin": {
     "flash": "bin/cli.js"
